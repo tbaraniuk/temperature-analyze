@@ -22,8 +22,7 @@ print(f'Initial array: {arr}')
 
 mean_arr = np.mean(arr, axis=0)
 max_arr = np.max(arr, axis=0)
-min_arr = np.min(arr, axis=0)
-
+min_arr_day_index = np.argmin(arr, axis=0)
 
 arr += np.random.uniform(0, 1, size=[7, 3]) - 0.5
 
@@ -34,7 +33,7 @@ days_mean_arr = np.mean(arr, axis=1)
 for i in range(len(cities)):
     print(f'Avg temperature for {cities[i]}: {np.round(mean_arr[i])}')
     print(f'Max temperature for {cities[i]}: {np.round(max_arr[i])}')
-    print(f'Min temperature for {cities[i]}: {np.round(min_arr[i])} \n')
+    print(f'Min temperature in {cities[i]} was in {days[min_arr_day_index[i] - 1]} \n')
 
 
 print(f'Modified array: {arr} \n')
